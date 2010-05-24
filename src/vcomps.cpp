@@ -358,7 +358,7 @@ QComponent *createComponent( int x, int y, int index, int forLoad )
 	  }
 }
 
-char *compList [] = {
+const char *compList [] = {
   "AND Gate",
   "OR Gate",
   "XOR Gate",
@@ -371,7 +371,7 @@ char *compList [] = {
   NULL
 };
 
-char *nameList[] = {
+const char *nameList[] = {
  "AND"      ,
  "OR"       ,
  "XOR"      ,

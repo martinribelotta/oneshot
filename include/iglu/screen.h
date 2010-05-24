@@ -35,15 +35,15 @@ extern void gui_drawrectfill (TRect& r, int color);
 extern void gui_drawrrect (TRect &r, int color);
 extern void gui_drawcircle (int x, int y, int radius, int color);
 extern void gui_drawcirclefill (int x, int y, int radius, int color);
-extern void gui_outtextxy (int x, int y, char *s, int center, int fg, int bg);
-extern int gui_textw (char *s);
-extern int gui_texth (char *s);
+extern void gui_outtextxy (int x, int y, const char *s, int center, int fg, int bg);
+extern int gui_textw (const char *s);
+extern int gui_texth (const char *s);
 extern void gui_setclip (TRect& r);
 extern void gui_getclip (TRect& r);
 extern void gui_wmode(int mode);
 extern void gui_drawelipse (int ax, int ay, int bx, int by, int cl);
 extern void gui_drawfillelipse (int ax, int ay, int bx, int by, int cl);
-extern void gui_drawpixmap (int x, int y, int w, int h, char *b, char *p);
+extern void gui_drawpixmap (int x, int y, int w, int h, const char *b, const char *p);
 
 extern void gui_flush ();
 

@@ -4,10 +4,11 @@
 #include <iglu/tview.h>
 
 class QPixmap: public TView {
-  char *palette, *pixmap;
+  const char *palette;
+  const char *pixmap;
   int background;
 public:
-  QPixmap (TRect& r, char *pal, char *pix, int bg);
+  QPixmap (TRect& r, const char *pal, const char *pix, int bg);
   virtual void Draw ();
 };
 

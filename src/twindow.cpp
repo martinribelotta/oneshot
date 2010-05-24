@@ -73,9 +73,9 @@ void do_resize_move (TGroup *Owner, TEvent& e, int resize_move) {
 
 class TTitleBar: public TView {
   TCharButton *x;
-  char **title;
+  const char **title;
 public:
-  TTitleBar (TRect& r, char **s): TView(r), title(s) {
+  TTitleBar (TRect& r, const char **s): TView(r), title(s) {
     r.a.x = r.b.x-WinTitleH;
     r.Grow( 1, 1 );
     x = new TCharButton( r, 'X', cmCancel );
@@ -135,7 +135,7 @@ public:
 
 /**********************************************************************/
 
-TWindow::TWindow (TRect& r, char *s):
+TWindow::TWindow (TRect& r, const char *s):
   TContainer(r, shpUpBox), title(s), menu(NULL)
 {
   TRect rb (0,0, WinTitleH, WinTitleH);

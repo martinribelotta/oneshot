@@ -1,7 +1,7 @@
 #include <iglu/qpixmap.h>
 #include <iglu/screen.h>
 
-QPixmap::QPixmap (TRect& r, char *pal, char *pix, int bg):
+QPixmap::QPixmap (TRect& r, const char *pal, const char *pix, int bg):
   TView (r), palette(pal), pixmap(pix), background(bg)
 {
 }

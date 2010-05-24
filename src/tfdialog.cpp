@@ -25,7 +25,7 @@ class CBOnChangeSelect: public TCallBack { public:
   }
 };
 
-TFileDialog::TFileDialog (char *title, char *ext):
+TFileDialog::TFileDialog (const char *title, const char *ext):
   TWindow (Rect (0,0,320,200), title)
 {
   TRect a, r;

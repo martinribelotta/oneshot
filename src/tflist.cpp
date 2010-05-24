@@ -44,7 +44,7 @@ static void my_getcwd (char *b, int l)
   uniformpath (b);
 }
 
-int isDir (char *s) {
+int isDir (const char *s) {
   int r=0;
   char olddir[256];
   my_getcwd (olddir, 255);
@@ -57,7 +57,7 @@ int isDir (char *s) {
 
 /*********************************************************************/
 
-TFileList::TFileList (TRect& r, char *_ext): TListBox (r), ext(_ext)
+TFileList::TFileList (TRect& r, const char *_ext): TListBox (r), ext(_ext)
 {
   my_getcwd (path, 80);
   OnSelectFile = NULL;
@@ -83,7 +83,7 @@ char *TFileList::getabsolute (int n)
   return getabsolute (getn(n));
 }
 
-char *TFileList::getabsolute (char *s)
+char *TFileList::getabsolute (const char *s)
 {
   char c[2];
   static char b[80];
@@ -151,12 +151,12 @@ void TFileList::scandir ()
   chdir (olddir);
 }
 
-int TFileList::passFilt (char *s)
+int TFileList::passFilt (const char *s)
 {
   // TODO: Que esto sea por regExp (como *.*)
   int equ = 1;
   if (!isDir (s) && ext) {
-    char *se=ext, *e = strrchr (s, '.');
+    const char *se=ext, *e = strrchr (s, '.');
     if ( !e )
       e = "";
     while (equ && *e && *se)

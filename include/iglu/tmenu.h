@@ -22,8 +22,8 @@
 #include <iglu/tview.h>
 
 class TMenuItem: public TObject { public:
-  char *caption;  int sig; TMenuItem *next;
-  TMenuItem(char *s, int c, TMenuItem *n=0L):
+  const char *caption;  int sig; TMenuItem *next;
+  TMenuItem(const char *s, int c, TMenuItem *n=0L):
     caption(s), sig(c), next(n) { }
   void add(TMenuItem *q) {
     if (next) next->add(q);
@@ -32,8 +32,8 @@ class TMenuItem: public TObject { public:
 };
 
 class TSubMenu { public:
-  char *caption;  TMenuItem *items; TSubMenu *next;
-  TSubMenu(char *s, TMenuItem *base, TSubMenu *n=0L):
+  const char *caption;  TMenuItem *items; TSubMenu *next;
+  TSubMenu(const char *s, TMenuItem *base, TSubMenu *n=0L):
     caption(s), items(base), next(n) { }
   void add(TSubMenu *q) {
     if (next) next->add(q);

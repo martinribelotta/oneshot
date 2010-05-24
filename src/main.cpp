@@ -237,7 +237,7 @@ TMyApp::TMyApp(int argc, char **argv): TProgram(argc, argv, EGA_CYAN)
   r.Grow( 10, 10 );
   doc = new QDocument();
   mainWindow = new TWindow( r,
-	"One-Shot: Simulador de circuitos digitales" );
+	"One-Shot: Digital circuit simulator" );
 //  mainWindow->State |= stNoMoveable;
 //  mainWindow->Align |= vaFixedSize;
   insert( mainWindow );

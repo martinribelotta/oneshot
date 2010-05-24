@@ -26,7 +26,7 @@ char checkpal[] = {
   -1
 };
 
-char *icon_check = {
+const char *icon_check = {
 "11111111"
 "10000002"
 "10000112"
@@ -37,7 +37,7 @@ char *icon_check = {
 "12222222"
 };
 
-char *icon_nocheck = {
+const char *icon_nocheck = {
 "11111111"
 "10000002"
 "10000002"
@@ -48,7 +48,7 @@ char *icon_nocheck = {
 "12222222"
 };
 
-char *icon_radioon = {
+const char *icon_radioon = {
 "33111133"
 "31000013"
 "31011023"
@@ -59,7 +59,7 @@ char *icon_radioon = {
 "33222233"
 };
 
-char *icon_radiooff = {
+const char *icon_radiooff = {
 "33111133"
 "31000013"
 "31000023"
@@ -76,7 +76,7 @@ char resize_pal[] = {
   EGA_BLACK
 };
 
-char *resize_icon = {
+const char *resize_icon = {
 /*
 "2222222222"
 "2000000120"

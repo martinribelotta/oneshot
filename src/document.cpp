@@ -63,7 +63,7 @@ bool QDocument::load (char *name)
 	if ( f ) {
 	  char b[32];
 	  while ( !feof( f ) ) {
-	    fscanf( f, "%s", b );
+	    if (fscanf( f, "%s", b )==0) return false;
 	    if ( strcmp( b, "node" ) == 0 ) {
 	      QNode *n = new QNode();
 	      if ( n->load( f ) )

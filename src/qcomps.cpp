@@ -207,7 +207,7 @@ void QComponent::insertPin( QPin *p )
 	pins = p;
 }
 
-QPin *QComponent::getPin( char *s )
+QPin *QComponent::getPin( const char *s )
 {
 	QPin *p;
 	for (p=pins; p; p=p->next)

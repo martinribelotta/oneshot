@@ -32,7 +32,7 @@ public:
   TTextButton *bOk, *bCancel;
   int isok;
 
-  TFileDialog (char *title, char *ext);
+  TFileDialog (const char *title, const char *ext);
   ~TFileDialog ();
   virtual void MessageEvent (TEvent& e);
 };

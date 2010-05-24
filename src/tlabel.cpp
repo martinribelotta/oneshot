@@ -20,7 +20,7 @@
 #include <string.h> // Only for strdup
 #include <stdlib.h> // Omly for free
 
-TLabel::TLabel (TRect& r, char *s, int fore, int back):
+TLabel::TLabel (TRect& r, const char *s, int fore, int back):
   TView(r), caption(strdup(s)), fg(fore), bg(back)
 {
   State &=~stFocusheable;
@@ -31,7 +31,7 @@ TLabel::~TLabel ()
   free(caption);
 }
 
-void TLabel::SetText (char *s)
+void TLabel::SetText (const char *s)
 {
   free(caption);
   caption = strdup(s);

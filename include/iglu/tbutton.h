@@ -66,8 +66,8 @@ public:
 // Boton con texto.
 class TTextButton: public TPushButton {
 public:
-  char *caption;
-  TTextButton (TRect& r, char *c, int s=0): TPushButton(r, s), caption(c) { }
+  const char *caption;
+  TTextButton (TRect& r, const char *c, int s=0): TPushButton(r, s), caption(c) { }
   virtual void DrawState(int st); // Reimplementado para mostrar el texto.
 };
 

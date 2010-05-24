@@ -67,7 +67,7 @@ public:
 
         void setName( const char *s );
 	void insertPin( QPin *p );
-	QPin *getPin( char *s );
+	QPin *getPin( const char *s );
 };
 
 #endif /* Oneshot_QComponent_h */

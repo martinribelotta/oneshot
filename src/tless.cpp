@@ -120,7 +120,8 @@ TLessFile::TLessFile (TRect& r, char *filename): TLessBase(r)
   if (f) {
     int wmax=0, lmax=0, i;
     while (!feof(f)) {
-      fgets (buffer, 255, f);
+      if (!fgets (buffer, 255, f))
+        break;
       i = strlen(buffer);
       if (i>wmax)
 	wmax=i;
@@ -136,7 +137,8 @@ TLessFile::TLessFile (TRect& r, char *filename): TLessBase(r)
     i=0;
     while (!feof(f)) {
       eolseek[i++] = ftell(f);
-      fgets (buffer, 255, f);
+      if (!fgets (buffer, 255, f))
+        break;
     }
   }
   lineend = calclend ();
@@ -157,7 +159,8 @@ char *TLessFile::getline (int l)
   if (f && (l>=0) && (l<linemax)) {
     int i;
     fseek (f, eolseek[l], SEEK_SET);
-    fgets(buffer, 255, f);
+    if (!fgets(buffer, 255, f))
+      buffer[0] = 0;
     i = 0;
     while (buffer[i]>=' ') i++;
     buffer[i]=0;

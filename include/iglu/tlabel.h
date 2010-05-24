@@ -27,11 +27,11 @@ protected:
   char *caption;
   int fg, bg;
 public:
-  TLabel (TRect& r, char *s, int fore=EGA_BLACK, int back=EGA_LIGHTGRAY);
+  TLabel (TRect& r, const char *s, int fore=EGA_BLACK, int back=EGA_LIGHTGRAY);
   ~TLabel ();
   virtual void Draw ();
 
-  void SetText(char *);
+  void SetText(const char *);
 };
 
 #endif /* _igluTLabel_h */

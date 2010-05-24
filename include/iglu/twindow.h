@@ -33,9 +33,9 @@ protected:
   TPoint minimumSize;
 public:
   TMenuBar *menu;
-  char *title;
+  const char *title;
 
-  TWindow (TRect& r, char *s);
+  TWindow (TRect& r, const char *s);
 
   virtual void getClientArea (TRect& r, int rel=1);
   void setMenuWindow (TMenuBar *m);

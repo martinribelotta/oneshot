@@ -24,11 +24,11 @@
 
 class TFileList: public TListBox {
 public:
-  char *ext;
+  const char *ext;
   char path[80];
   TCallBack *OnSelectFile;
 
-  TFileList (TRect& r, char *_ext=NULL);
+  TFileList (TRect& r, const char *_ext=NULL);
   ~TFileList ();
 
   virtual void HandleEvent (TEvent& e);
@@ -38,11 +38,11 @@ public:
 
   char *getabsolute (); // Select name
   char *getabsolute (int n); // on especific point
-  char *getabsolute (char *s); // concatenate path+s
+  char *getabsolute (const char *s); // concatenate path+s
   char *getfilename ();
 
   void scandir ();
-  int passFilt (char *name);
+  int passFilt (const char *name);
 };
 
 #endif

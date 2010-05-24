@@ -190,7 +190,7 @@ void gui_drawcirclefill(int x, int y, int radius, int color) {
 
 extern void writechar (int x, int y, char c, int cl);
 
-void gui_outtextxy(int x, int y, char *s, int center, int fg, int bg)
+void gui_outtextxy(int x, int y, const char *s, int center, int fg, int bg)
 {
   if (center) (y-=Ht/2, x-=gui_textw(s)>>1);
   TRect r (x, y, x+gui_textw(s), y+gui_texth(s));
@@ -201,7 +201,7 @@ void gui_outtextxy(int x, int y, char *s, int center, int fg, int bg)
   needFlush = true;
 }
 
-int gui_textw(char *s)
+int gui_textw(const char *s)
 {
 //  return XTextWidth (fonts, s, strlen(s));
   int l, i;
@@ -209,7 +209,7 @@ int gui_textw(char *s)
   return l;
 }
 
-int gui_texth(char *s)
+int gui_texth(const char *s)
 {
 //  return fonts->ascent+fonts->descent;
   return 8;
@@ -275,7 +275,7 @@ void gui_drawfillelipse (int ax, int ay, int bx, int by, int cl)
   needFlush = true;
 }
 
-void gui_drawpixmap (int x, int y, int w, int h, char *b, char *p)
+void gui_drawpixmap (int x, int y, int w, int h, const char *b, const char *p)
 {
   int i,j,k;
   for (j=0, k=0; j<h; j++)
