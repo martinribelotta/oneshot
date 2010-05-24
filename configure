@@ -1,0 +1,3 @@
+#!/bin/sh
+ln -s Makefile.x11 Makefile
+echo New run make to create program

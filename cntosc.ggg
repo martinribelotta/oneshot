@@ -1,0 +1,63 @@
+
+node 0
+	point 0 193 104 -1
+	point 1 275 171 -1
+	niple 2 0 1
+endnode
+
+node 1
+	point 0 355 171 -1
+endnode
+
+node 2
+	point 0 355 187 -1
+endnode
+
+node 3
+	point 0 355 203 -1
+endnode
+
+node 4
+	point 0 355 219 -1
+endnode
+
+node 5
+	point 0 355 235 -1
+endnode
+
+node 6
+	point 0 355 251 -1
+	point 1 431 302 0
+	point 2 431 343 1
+	point 3 240 343 2
+	point 4 275 187 -1
+	point 5 197 220 4
+	niple 6 3 5
+endnode
+
+node 7
+	point 0 355 267 -1
+endnode
+
+node 8
+	point 0 355 283 -1
+endnode
+
+
+comp "OSC 2Tk" 113 80 64 48
+	2
+	pin "OUT" out 0 0
+endcomp
+
+comp "Count" 291 155 48 144
+	pin "Q0" out 1 0
+	pin "Q1" out 2 0
+	pin "Q2" out 3 0
+	pin "Q3" out 4 0
+	pin "Q4" out 5 0
+	pin "Q5" out 6 0
+	pin "Q6" out 7 0
+	pin "Q7" out 8 0
+	pin "CLK" in 0 1
+	pin "RST" in 6 4
+endcomp

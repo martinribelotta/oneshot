@@ -1,0 +1,163 @@
+node 0
+	point 0 48 267 -1
+	point 1 114 338 -1
+	point 2 716 255 -1
+	point 3 674 352 2
+	point 4 268 352 3
+	niple 5 1 4
+	niple 6 0 1
+endnode
+
+node 1
+	point 0 171 189 -1
+	point 1 232 171 -1
+	niple 2 0 1
+endnode
+
+node 2
+	point 0 91 197 -1
+	point 1 128 267 -1
+	niple 2 0 1
+endnode
+
+node 3
+	point 0 91 181 -1
+	point 1 140 93 -1
+	niple 2 0 1
+endnode
+
+node 4
+	point 0 616 209 -1
+	point 1 636 247 -1
+	niple 2 0 1
+endnode
+
+node 5
+	point 0 480 290 -1
+	point 1 636 263 -1
+	niple 2 0 1
+endnode
+
+node 6
+	point 0 500 232 -1
+	point 1 536 217 -1
+	niple 2 0 1
+endnode
+
+node 7
+	point 0 420 240 -1
+	point 1 312 219 -1
+	niple 2 0 1
+endnode
+
+node 8
+	point 0 494 174 -1
+	point 1 536 201 -1
+	niple 2 0 1
+endnode
+
+node 9
+	point 0 232 187 -1
+endnode
+
+node 10
+	point 0 312 283 -1
+endnode
+
+node 11
+	point 0 312 267 -1
+endnode
+
+node 12
+	point 0 312 251 -1
+	point 1 371 270 0
+	point 2 371 300 1
+	point 3 400 298 -1
+	niple 4 2 3
+endnode
+
+node 13
+	point 0 312 235 -1
+	point 1 391 255 0
+	point 2 400 282 -1
+	niple 3 1 2
+endnode
+
+node 14
+	point 0 312 203 -1
+	point 1 398 203 0
+	point 2 420 224 -1
+	niple 3 1 2
+endnode
+
+node 15
+	point 0 312 187 -1
+	point 1 414 182 -1
+	niple 2 0 1
+endnode
+
+node 16
+	point 0 312 171 -1
+	point 1 414 166 -1
+	niple 2 0 1
+endnode
+
+comp "NOT" 64 255 48 24
+	pin "Q" out 2 1
+	pin "I" in 0 0
+endcomp
+
+comp "AND" 107 165 48 48
+	pin "Q" out 1 0
+	pin "B" in 2 0
+	pin "A" in 3 0
+endcomp
+
+comp "AND" 652 231 48 48
+	pin "Q" out 0 2
+	pin "B" in 5 1
+	pin "A" in 4 1
+endcomp
+
+comp "AND" 552 185 48 48
+	pin "Q" out 4 0
+	pin "B" in 6 1
+	pin "A" in 8 1
+endcomp
+
+comp "AND" 416 266 48 48
+	pin "Q" out 5 0
+	pin "B" in 12 3
+	pin "A" in 13 2
+endcomp
+
+comp "AND" 436 208 48 48
+	pin "Q" out 6 0
+	pin "B" in 7 0
+	pin "A" in 14 2
+endcomp
+
+comp "AND" 430 150 48 48
+	pin "Q" out 8 0
+	pin "B" in 15 1
+	pin "A" in 16 1
+endcomp
+
+comp "OSC 0Tk" 60 69 64 48
+0
+	pin "OUT" out 3 1
+endcomp
+
+comp "Count" 248 155 48 144
+	pin "RST" in 9 0
+	pin "CLK" in 1 1
+	pin "Q7" out 10 0
+	pin "Q6" out 11 0
+	pin "Q5" out 12 0
+	pin "Q4" out 13 0
+	pin "Q3" out 7 1
+	pin "Q2" out 14 0
+	pin "Q1" out 15 0
+	pin "Q0" out 16 0
+endcomp
+

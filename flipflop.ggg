@@ -1,0 +1,45 @@
+node 0
+	point 0 224 172 -1
+	point 1 309 86 -1
+	niple 2 0 1
+endnode
+
+node 1
+	point 0 224 188 -1
+	point 1 319 289 -1
+	niple 2 0 1
+	point 3 441 194 1
+endnode
+
+node 2
+	point 0 304 180 -1
+	point 1 239 281 -1
+	niple 2 0 1
+endnode
+
+node 3
+	point 0 239 297 -1
+	point 1 119 230 0
+endnode
+
+node 4
+	point 0 229 86 -1
+	point 1 116 188 0
+endnode
+
+comp "AND" 240 156 48 48
+	pin "A" in 0 0
+	pin "B" in 1 0
+	pin "Q" out 2 0
+endcomp
+
+comp "OR" 255 265 48 48
+	pin "A" in 2 1
+	pin "B" in 3 0
+	pin "Q" out 1 1
+endcomp
+
+comp "NOT" 245 74 48 24
+	pin "I" in 4 0
+	pin "Q" out 0 1
+endcomp
