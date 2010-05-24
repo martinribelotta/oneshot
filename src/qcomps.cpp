@@ -8,12 +8,12 @@
 
 extern QDocument *doc;
 
-QPin::QPin( int d, QNode *nd, QNodePoint *ndp, char *s ):
+QPin::QPin( int d, QNode *nd, QNodePoint *ndp, const char *s ):
   io(d), indicen(nd), indicem(ndp), _name(strdup(s))
 {
 }
 
-QPin::QPin( int a, int b, int c, char *s ):
+QPin::QPin( int a, int b, int c, const char *s ):
 	io(c), indicen(NULL), indicem(NULL)
 {
 	_name = strdup( s );
@@ -71,7 +71,7 @@ QComponent::~QComponent()
   }
 }
 
-void QComponent::setName( char *s )
+void QComponent::setName( const char *s )
 {
   if ( name )
     delete name;

@@ -87,7 +87,7 @@ char *pixmapabout = /*
 "0000000000000000000000000000000000000000111111111100000000000111" // 71
 ;
 
-AboutOneSHOT::AboutOneSHOT(): TWindow(Rect(0,0,300,140), "Acerca de...")
+AboutOneSHOT::AboutOneSHOT(): TWindow(Rect(0,0,300,140), "About this")
 {
   minimumSize = QPoint( Bounds.deltax(), Bounds.deltay() );
   QRect a, r( Bounds );
@@ -104,9 +104,9 @@ AboutOneSHOT::AboutOneSHOT(): TWindow(Rect(0,0,300,140), "Acerca de...")
 
   r = TRect (r.b.x, a.a.y, a.b.x, a.b.y);
   TLabel *lb = new TLabel (r,
-	"\nOne-Shot: Simulador de\n"
-	"circuitos digitales\n"
-	"para MS-DOS.\n"
+	"\nOne-Shot: Digital circuit\n"
+	"simulator for DOS and X11\n"
+	"\n"
 	"Copyright (C) Martin\n"
 	"Alejandro Ribelotta",
 	EGA_BLACK, -1 );

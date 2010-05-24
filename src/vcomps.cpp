@@ -384,10 +384,12 @@ char *nameList[] = {
  NULL
 };
 
-QComponent *createComponentByName( char *name )
+QComponent *createComponentByName( const char *C_name )
 {
   int i=0;
   char t=0;
+  char *name = new char[strlen(C_name+1)];
+  strcpy(name, C_name);
   if ( strncmp( name, "OSC ", 4 ) == 0 )
     { t=name[4]; name[4] = '*'; }
   while ( nameList[i] )
@@ -397,5 +399,6 @@ QComponent *createComponentByName( char *name )
       i++;
   if ( t!=0 )
     name[4] = t;
+  delete name;
   return createComponent( 0, 0, i, 1 );
 }

@@ -249,24 +249,24 @@ TMyApp::TMyApp(int argc, char **argv): TProgram(argc, argv, EGA_CYAN)
   r.b.y = r.a.y + Ht*2;
 
   mainMenu = new TMenuBar (r,
-    new TSubMenu("Archivo",
-      new TMenuItem("Nuevo",  cmNuevo,
-      new TMenuItem("Abrir",  cmAbrir,
-      new TMenuItem("Guardar", cmGuardar,
+    new TSubMenu("File",
+      new TMenuItem("New",  cmNuevo,
+      new TMenuItem("Open",  cmAbrir,
+      new TMenuItem("Save", cmGuardar,
       new TMenuItem(mnuSeparatorLine, 0,
-      new TMenuItem("Salir", cmSalir,
+      new TMenuItem("Quit", cmSalir,
       NULL))))),
-    new TSubMenu("Editar",
-      new TMenuItem("Propiedades", cmPropiedades,
+    new TSubMenu("Edit",
+      new TMenuItem("Properties", cmPropiedades,
       new TMenuItem(mnuSeparatorLine, 0,
-      new TMenuItem("Borrar", cmBorrar,
+      new TMenuItem("Delete", cmBorrar,
       NULL))),
-    new TSubMenu("Simular",
-      new TMenuItem("Arrancar", cmSimOn,
-      new TMenuItem("Detener", cmSimOff,
+    new TSubMenu("Simulate",
+      new TMenuItem("Start", cmSimOn,
+      new TMenuItem("Stop", cmSimOff,
     NULL)),
-    new TSubMenu("Ayuda",
-      new TMenuItem("Acerca de...", cmAcerca_de, NULL),
+    new TSubMenu("Help",
+      new TMenuItem("About...", cmAcerca_de, NULL),
     NULL))))
   );
 
@@ -313,7 +313,7 @@ void TMyApp::HandleEvent(TEvent& e)
 	 canvas->doDraw();
        break;
        case cmAbrir: {
-	 TFileDialog *d = new TFileDialog ("Abrir archivo", ".ggg");
+	 TFileDialog *d = new TFileDialog ("Open file", ".ggg");
 	 TRect r (d->Bounds);
 	 r.centeron (Application->Bounds);
 	 d->move (r.a.x, r.a.y);
@@ -325,7 +325,7 @@ void TMyApp::HandleEvent(TEvent& e)
 	   if ( !doc->load( s1 ) ) {
 	     doc->newDoc();
 	     canvas->doDraw();
-	     MessageBox( "Error al leer el archivo %s",
+	     MessageBox( "Error reading file %s",
 	       d->filename->text );
 	   } else {
 	     canvas->moveall( canvas->Bounds.a.x, canvas->Bounds.a.y );
@@ -336,7 +336,7 @@ void TMyApp::HandleEvent(TEvent& e)
 	 mainWindow->GotFocus();
        } break;
        case cmGuardar: {
-	 TFileDialog *d = new TFileDialog ("Guardar archivo", ".ggg");
+	 TFileDialog *d = new TFileDialog ("Save file", ".ggg");
 	 TRect r (d->Bounds);
 	 r.centeron (Application->Bounds);
 	 d->move (r.a.x, r.a.y);
@@ -345,7 +345,7 @@ void TMyApp::HandleEvent(TEvent& e)
 	 if (d->isok) {
 	   canvas->moveall( -canvas->Bounds.a.x, -canvas->Bounds.a.y );
 	   if ( !doc->save( d->filename->text ) )
-	     MessageBox( "No se pudo guardar el archivo %s\n",
+	     MessageBox( "Can not save file %s\n",
 	       d->filename->text);
 	   canvas->moveall( canvas->Bounds.a.x, canvas->Bounds.a.y );
 	 }

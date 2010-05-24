@@ -1,7 +1,7 @@
 # Makefile.x11 for One-SHOT
 
 LDOPT=-L/usr/X11R6/lib -lX11
-COMPILE_CPP=g++ -c -Os -DONX11 -ggdb3 -o $@ -I./include $<
+COMPILE_CPP=g++ -Wwrite-strings -c -Os -DONX11 -ggdb3 -o $@ -I./include $<
 OBJECTS=\
 obj/about.o obj/document.o obj/fontm.o obj/icons.o obj/main.o obj/mouse.o obj/mousehdl.o \
 obj/msgbox.o obj/qcomps.o obj/qnode.o obj/qpixmap.o obj/screen.o obj/structs.o obj/tbutton.o \

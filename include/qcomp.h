@@ -19,9 +19,9 @@ public:
 	QNode *indicen;
 	QNodePoint *indicem;
 
-	QPin( int d, QNode *nd, QNodePoint *ndp, char *s );
+	QPin( int d, QNode *nd, QNodePoint *ndp, const char *s );
 	// x(a), y(b), io(c)
-	QPin( int a, int b, int c, char *s );
+	QPin( int a, int b, int c, const char *s );
 	~QPin();
 
 	void draw();
@@ -65,7 +65,7 @@ public:
 	void moverel( int dx, int dy ) { do_moverel( dx, dy, 0 ); }
 	void moveto( int dx, int dy ) { do_moverel( dx, dy, 1 ); }
 
-        void setName( char *s );
+        void setName( const char *s );
 	void insertPin( QPin *p );
 	QPin *getPin( char *s );
 };
